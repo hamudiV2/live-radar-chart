@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Radar Chart</title>
+</head>
+<body style="background-color: #0E1117; color: white;">
+    <h1>Live Radar Chart</h1>
+    <form method="POST">
+        <label for="chem">Chemistry (%):</label>
+        <input type="number" id="chem" name="chem" min="0" max="100"><br><br>
+        <label for="bio">Biology (%):</label>
+        <input type="number" id="bio" name="bio" min="0" max="100"><br><br>
+        <label for="phy">Physics (%):</label>
+        <input type="number" id="phy" name="phy" min="0" max="100"><br><br>
+        <label for="eng">English (%):</label>
+        <input type="number" id="eng" name="eng" min="0" max="100"><br><br>
+        <label for="math">Maths (%):</label>
+        <input type="number" id="math" name="math" min="0" max="100"><br><br>
+        <button type="submit">Update Chart</button>
+    </form>
+    {% if plot_url %}
+        <h2>Radar Chart</h2>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Radar Chart">
+    {% endif %}
+</body>
+</html>
